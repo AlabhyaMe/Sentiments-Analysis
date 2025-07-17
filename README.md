@@ -89,14 +89,14 @@ All the required instructions and code to run the sentiment analysis pipeline ar
 Launch Jupyter Lab/Notebook from your project's root directory:
 
 jupyter lab
-# or
+or
 jupyter notebook
 
 Open the sentiment_analysis_main.ipynb notebook.
 
 Follow the instructions and execute the cells sequentially. The notebook guides you through data loading, preprocessing, model training, and making predictions on new data.
 
-⚙️ Project Structure & Components
+## ⚙️ Project Structure & Components
 The core logic of this pipeline is organized into modular folders:
 
 preprocessing.py: Contains all the text cleaning and preprocessing functions (e.g., pre_process).
@@ -117,7 +117,7 @@ random_forest_model.py
 
 xgboost_model.py
 
-⚠️ Important Note on Code Modification
+## ⚠️ Important Note on Code Modification
 This pipeline is designed for ease of use. The machine learning algorithms (Logistic Regression, Random Forest, XGBoost) and text representation methods (Bag-of-Words, TF-IDF, Word Embeddings) are pre-configured with hyperparameter tuning.
 
 If you know what you are doing and understand the implications of hyperparameter changes or algorithm modifications, you may tweak the code within the Vect/ and MLAlgo/ folders.
