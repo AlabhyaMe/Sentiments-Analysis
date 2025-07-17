@@ -1,0 +1,16 @@
+Following packages in Python are required
+1. Polars
+2. Scikit-learn
+3. Gensim (for word embedding)
+4. Nltk 
+
+Note that this model is built on the following version.
+
+Python version     : 3.11.7 | packaged by Anaconda, Inc. | (main, Dec 15 2023, 18:05:47) [MSC v.1916 64 bit (AMD64)]
+polars version     : 1.31.0
+scikit-learn       : 1.7.0
+gensim version     : 4.3.0
+nltk version       : 3.8.1
+xgboost version    : 3.0.2
+
+I may occasionally update the workspace to meet the requirements of new packages. However, please ensure that your packages are either the same versions or newer. Older versions of Polars and XGBoost are known to cause compatibility issues and may not run properly.
