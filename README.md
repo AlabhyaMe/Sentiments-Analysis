@@ -65,9 +65,14 @@ Follow these steps to get your sentiment analysis pipeline up and running:
 NLTK requires some data files. Run the following Python commands once to download them:
 
 import nltk
+
 nltk.download('punkt')
+
 nltk.download('stopwords')
+
 nltk.download('wordnet')
+
+This is not executed in the script file
 
 ### 5. Prepare Your Data
 
