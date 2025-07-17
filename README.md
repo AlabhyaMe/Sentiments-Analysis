@@ -1,7 +1,9 @@
-Sentiment Analysis Pipeline
+# Sentiment Analysis Pipeline
+
 This repository hosts an easy-to-use, ready-made Sentiment Analysis pipeline designed to get you started quickly with classifying text data. Everything you need, from data preprocessing to model training and prediction, is set up and configured.
 
-✨ Features
+## ✨ Features
+
 End-to-End Pipeline: Go from raw text to sentiment predictions with minimal setup.
 
 Automated Preprocessing: Includes robust text cleaning (lemmatization, stop word removal, punctuation handling, URL/emoji/HTML removal, etc.).
@@ -30,17 +32,19 @@ Modular Design: Code is organized into separate, clean modules for easy understa
 
 Prediction on New Data: Easily apply your trained model to new, unseen text data.
 
-🚀 Getting Started
+## 🚀 Getting Started
 Follow these steps to get your sentiment analysis pipeline up and running:
 
-1. Prerequisites
+### 1. Prerequisites
+
 Git: For cloning the repository.
 
 Python 3.8+: (Recommended to use Anaconda for environment management).
 
 Anaconda/Miniconda: Highly recommended for managing Python environments and dependencies.
 
-2. Clone the Repository
+### 2. Clone the Repository
+
 Open your terminal or Git Bash and run:
 
 git clone https://github.com/your-username/your-repo-name.git
@@ -48,7 +52,8 @@ cd your-repo-name # Navigate into the cloned directory
 
 (Replace https://github.com/your-username/your-repo-name.git with the actual URL of your GitHub repository.)
 
-3. Set Up Your Environment & Install Dependencies
+### 3. Set Up Your Environment & Install Dependencies
+
 It's highly recommended to create a dedicated Conda environment to avoid conflicts:
 
 conda create -n sentiment_env python=3.9 # Create a new environment
@@ -57,7 +62,8 @@ pip install -r requirements.txt        # Install all required libraries
 
 (The requirements.txt file is located in the root of this repository and lists all necessary packages like polars, scikit-learn, gensim, xgboost, nltk.)
 
-4. Download NLTK Data
+### 4. Download NLTK Data
+
 NLTK requires some data files. Run the following Python commands once to download them:
 
 import nltk
@@ -65,7 +71,8 @@ nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
-5. Prepare Your Data
+### 5. Prepare Your Data
+
 Your project expects data in specific locations:
 
 Training Data: Place your training CSV file (e.g., train.csv) inside the Training Data/ directory.
@@ -76,7 +83,7 @@ New Data for Prediction: Place your new CSV file (e.g., new_texts.csv) that you 
 
 It must contain a column named RawTextColumn (or whatever you configure in the notebook) for the raw text.
 
-6. Run the Main Pipeline
+### 6. Run the Main Pipeline
 All the required instructions and code to run the sentiment analysis pipeline are within the sentiment_analysis_main.ipynb Jupyter Notebook.
 
 Launch Jupyter Lab/Notebook from your project's root directory:
