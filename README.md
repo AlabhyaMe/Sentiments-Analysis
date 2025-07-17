@@ -4,33 +4,33 @@ This repository hosts an easy-to-use, ready-made Sentiment Analysis pipeline des
 
 ## ✨ Features
 
-End-to-End Pipeline: Go from raw text to sentiment predictions with minimal setup.
+* End-to-End Pipeline: Go from raw text to sentiment predictions with minimal setup.
 
-Automated Preprocessing: Includes robust text cleaning (lemmatization, stop word removal, punctuation handling, URL/emoji/HTML removal, etc.).
+* Automated Preprocessing: Includes robust text cleaning (lemmatization, stop word removal, punctuation handling, URL/emoji/HTML removal, etc.).
 
-Multiple Text Representation Methods: Experiment with different ways to convert text into numerical features:
+  * Multiple Text Representation Methods: Experiment with different ways to convert text into numerical features:
 
-Bag-of-Words (BoW)
+  * Bag-of-Words (BoW)
 
-Term Frequency (TF)
+  * Term Frequency (TF)
 
-TF-IDF (Term Frequency-Inverse Document Frequency)
+  * TF-IDF (Term Frequency-Inverse Document Frequency)
 
-Word Embeddings (Word2Vec - pre-trained Google News 300-dim model used)
+  * Word Embeddings (Word2Vec - pre-trained Google News 300-dim model used)
 
-Multiple Machine Learning Algorithms: Choose from powerful classification models:
+* Multiple Machine Learning Algorithms: Choose from powerful classification models:
 
-Logistic Regression
+  * Logistic Regression
 
-Random Forest
+  * Random Forest
 
-XGBoost
+  * XGBoost
 
-Hyperparameter Tuned Models: All included machine learning models are configured with GridSearchCV for optimal performance, ensuring they find the best hyperparameters.
+* Hyperparameter Tuned Models: All included machine learning models are configured with GridSearchCV for optimal performance, ensuring they find the best hyperparameters.
 
-Modular Design: Code is organized into separate, clean modules for easy understanding and maintenance.
+* Modular Design: Code is organized into separate, clean modules for easy understanding and maintenance.
 
-Prediction on New Data: Easily apply your trained model to new, unseen text data.
+* Prediction on New Data: Easily apply your trained model to new, unseen text data.
 
 ## 🚀 Getting Started
 Follow these steps to get your sentiment analysis pipeline up and running:
