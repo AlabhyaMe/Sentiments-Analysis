@@ -19,4 +19,9 @@ def vectorize(texts: list[str]):
 
     X_dense = X_tfidf.toarray() # Convert to dense NumPy array as requested
 
-    return X_dense
+    # The 'vectorizer' object (CountVectorizer instance) is returned here
+    # because it is 'fitted' on the training data and contains the learned
+    # vocabulary. This fitted object is essential to consistently transform
+    # new, unseen data into the same feature space.
+    
+    return X_dense, vectorizer

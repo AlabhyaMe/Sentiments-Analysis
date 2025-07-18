@@ -37,4 +37,6 @@ def vectorize(texts):
         for tokens in tokenized
     ])
 
-    return X_features
+    # For Word2Vec, the loaded model instance itself serves as the "fitted vectorizer object"
+    # because it contains the vocabulary and embeddings needed to transform new data consistently.
+    return X_features, _loaded_word2vec_model_instance # since we are using array, order is necessary, thus we need to return the model instance as well

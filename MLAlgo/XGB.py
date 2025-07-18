@@ -61,4 +61,4 @@ def train_and_predict(X_train, y_train, X_test):
     y_pred = best_model.predict(X_test)
 
     # Return both the predictions and the best model object
-    return y_pred
+    return y_pred, best_model
