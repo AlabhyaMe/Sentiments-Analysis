@@ -100,7 +100,8 @@ Open the sentiment_analysis_main.ipynb notebook.
 Follow the instructions and execute the cells sequentially. The notebook guides you through data loading, preprocessing, model training, and making predictions on new data.
 
 ## ⚙️ Project Structure & Components
-The core logic of this pipeline is organized into modular folders:
+
+* The core logic of this pipeline is organized into modular folders:
 
 preprocessing.py: Contains all the text cleaning and preprocessing functions (e.g., pre_process).
 
@@ -125,6 +126,11 @@ This pipeline is designed for ease of use. The machine learning algorithms (Logi
 
 If you know what you are doing and understand the implications of hyperparameter changes or algorithm modifications, you may tweak the code within the Vect/ and MLAlgo/ folders.
 
+
 Otherwise, it is strongly recommended NOT to make any changes to these internal .py files, as incorrect modifications can lead to program crashes or unexpected behavior.
 
 Enjoy your sentiment analysis journey!
+
+## Dataset Used from - 
+
+* 1 Choudhary, M. K. (n.d.). Sentiment Prediction on Movie Reviews [Data set]. Kaggle. https://www.kaggle.com/datasets/madhavkumarchoudhary/sentiment-prediction-on-movie-reviews
