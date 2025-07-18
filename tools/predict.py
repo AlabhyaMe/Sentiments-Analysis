@@ -28,6 +28,27 @@ def predict_pipeline(
         # Prepare data
 
     X_text = df[text_column_name].to_list() 
+
+    
+    initial_data_len = len(X_text)
+
+    # Filter out None values directly in X_text
+    X_text = [x for x in X_text if x is not None]
+
+    # Handle case where all data might be None
+    if not X_text:
+        print("WARNING: All data rows contained missing values after initial extraction. Cannot proceed with training.")
+        return None
+
+    # Calculate and report dropped rows
+    dropped_rows_count = initial_data_len - len(X_text)
+    if dropped_rows_count > 0:
+        print(f"WARNING: Dropped {dropped_rows_count} rows due to missing values (None) in the input data. "
+            f"Original rows: {initial_data_len}, Rows after dropping: {len(X_text)}")
+    else:
+        print("No missing values (None) found in the input data. Proceeding with all rows.")   # Filter out None values from X
+        
+
     # Vectorize the new data
     X_new,vect_method = vectorize_function(X_text)  # Passes the processed text to the vectorizer function, which returns the vectorized representation
     #since i am reusing the vectorizer function, it will return the vectorized data in the same format as before, which is not necessary anymore
