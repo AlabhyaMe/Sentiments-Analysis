@@ -21,4 +21,8 @@ def vectorize(texts):
     # Fit and transform on the entire dataset as per the current run_pipeline design
     X_features = vectorizer.fit_transform(texts)
 
-    return X_features
+    # The 'vectorizer' object (CountVectorizer instance) is returned here
+    # because it is 'fitted' on the training data and contains the learned
+    # vocabulary. This fitted object is essential to consistently transform
+    # new, unseen data into the same feature space.
+    return X_features, vectorizer

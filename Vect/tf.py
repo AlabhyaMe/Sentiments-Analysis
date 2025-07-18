@@ -27,5 +27,9 @@ def vectorize(texts):
     row_sums[row_sums == 0] = 1
 
     X_tf = X_counts_dense / row_sums
-
-    return X_tf
+    
+    # The 'vectorizer' object (CountVectorizer instance) is returned here
+    # because it is 'fitted' on the training data and contains the learned
+    # vocabulary. This fitted object is essential to consistently transform
+    # new, unseen data into the same feature space.
+    return X_tf,vectorizer
