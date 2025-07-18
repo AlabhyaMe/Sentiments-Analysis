@@ -12,8 +12,8 @@ def run_pipeline(
     vectorizer_name: str,
     model_name: str,
     df: pl.DataFrame,
-    text_column_name: str,       
-    sentiment_column_name: str   
+    text_column_name: str,
+    sentiment_column_name: str
 ):
     """
     Runs the full pipeline:
@@ -49,9 +49,33 @@ def run_pipeline(
         print(f"Error loading ML model module/function: {e}")
         return None
 
-    # Prepare data using the provided column names
-    X_text = df[text_column_name].to_list() 
-    y_raw = df[sentiment_column_name].to_list() 
+    # Prepare data
+    X_text = df[text_column_name].to_list()
+    y_raw = df[sentiment_column_name].to_list()
+
+    # --- NEW: Check for and drop None values in X_text and y_raw ---
+    initial_data_len = len(X_text)
+    
+    # Filter out pairs where either X_text element or y_raw element is None
+    # Use zip to iterate over both lists simultaneously and filter
+    filtered_data = [(x, y_val) for x, y_val in zip(X_text, y_raw) if x is not None and y_val is not None]
+    
+    # Unzip the filtered data back into X_text and y_raw
+    if filtered_data: # Check if filtered_data is not empty to avoid unpacking error
+        X_text, y_raw = zip(*filtered_data)
+        X_text = list(X_text) # Convert back to list
+        y_raw = list(y_raw)   # Convert back to list
+    else:
+        # Handle case where all data might be None
+        print("WARNING: All data rows contained missing values after initial extraction. Cannot proceed with training.")
+        return None
+
+    dropped_rows_count = initial_data_len - len(X_text)
+    if dropped_rows_count > 0:
+        print(f"WARNING: Dropped {dropped_rows_count} rows due to missing values (None) in '{text_column_name}' or '{sentiment_column_name}' columns. Original rows: {initial_data_len}, Rows after dropping: {len(X_text)}")
+    else:
+        print("No missing values (None) found in text or sentiment columns. Proceeding with all rows.")
+    # ------------------------------------------------------------------
 
     # Label Encoding for y_raw
     label_encoder = LabelEncoder()
