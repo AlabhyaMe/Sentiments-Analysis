@@ -48,7 +48,8 @@ cd Sentimental-Analysis-
 conda create -n sentiment_env python=3.9
 conda activate sentiment_env
 pip install -r requirements.txt
-
+```
+```
 This project is setup in the follwing pipeline
 ├── Training Data/
 │   └── train.csv                # Your training file
@@ -70,6 +71,25 @@ This project is setup in the follwing pipeline
 
 
 ```
+
+
+## 3. Prepare Your Data
+
+### 📌 Training Data
+
+Place your training CSV file in the `Training Data/` folder.
+
+- It must contain:
+  - A column named `Response` – for the raw input text.
+  - A column named `Sentiment` – for sentiment labels (e.g., `"Positive"`, `"Negative"`, `"Neutral"`).
+
+### 📌 New Data for Prediction
+
+Place your new prediction CSV file in the `New Data/` folder.
+
+- It must contain:
+  - A column named `RawTextColumn` (or another name you configure in the notebook).
+
 ## 📚 Dataset Citation
 
 This project uses publicly available training data from:
