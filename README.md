@@ -45,3 +45,38 @@ Follow these steps to get your sentiment analysis pipeline up and running:
 ```bash
 git clone https://github.com/AlabhyaMe/Sentimental-Analysis-.git
 cd Sentimental-Analysis-
+conda create -n sentiment_env python=3.9
+conda activate sentiment_env
+pip install -r requirements.txt
+
+This project is setup in the follwing pipeline
+├── Training Data/
+│   └── train.csv                # Your training file
+├── New Data/
+│   └── new_texts.csv            # Your new prediction file
+├── MLAlgo/
+│   ├── logistic_regression_model.py
+│   ├── random_forest_model.py
+│   └── xgboost_model.py
+├── Vect/
+│   ├── bag_of_words_vectorizer.py
+│   ├── tfidf_vectorizer.py
+│   └── word_embedding_vectorizer.py
+├── preprocessing.py             # Text cleaning functions
+├── sentiment_analysis_main.ipynb  # Full training + prediction notebook
+├── sentiment_prediction.ipynb     # Quick prediction-only notebook
+├── requirements.txt
+└── README.md
+
+
+```
+## 📚 Dataset Citation
+
+This project uses publicly available training data from:
+
+> Madhav Kumar Choudhary. *Sentiment Prediction on Movie Reviews*. Kaggle.  
+> [https://www.kaggle.com/datasets/madhavkumarchoudhary/sentiment-prediction-on-movie-reviews](https://www.kaggle.com/datasets/madhavkumarchoudhary/sentiment-prediction-on-movie-reviews)  
+> Accessed on: 2025- 07-15
+
+If you use this dataset in your own work, please cite the original creator as per Kaggle's [Terms of Use](https://www.kaggle.com/terms).
+
