@@ -1,4 +1,5 @@
 import polars as pl
+import numpy as np
 def make_predictions(
         new_data: pl.DataFrame,
         text_column_name: str,
