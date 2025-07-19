@@ -34,17 +34,17 @@ def run_pipeline(
     """
     print(f"--- Running Pipeline for {vectorizer_name.replace('_', ' ').title()} + {model_name.replace('_', ' ').title()} ---")
 
-    # Import vectorizer from Vect folder
+    # Import vectorizer from vect folder
     try:
-        vec_module = importlib.import_module(f"Vect.{vectorizer_name}")
+        vec_module = importlib.import_module(f"vect.{vectorizer_name}")
         vectorize_function = getattr(vec_module, "vectorize")
     except (ImportError, AttributeError) as e:
         print(f"Error loading vectorizer module/function: {e}")
         return None
 
-    # Import ML model from MLAlgo folder
+    # Import ML model from ml_algo folder
     try:
-        model_module = importlib.import_module(f"MLAlgo.{model_name}")
+        model_module = importlib.import_module(f"ml_algo.{model_name}")
         train_and_predict_function = getattr(model_module, "train_and_predict")
     except (ImportError, AttributeError) as e:
         print(f"Error loading ML model module/function: {e}")
