@@ -5,58 +5,56 @@ from sklearn.model_selection import GridSearchCV # Import GridSearchCV
 from sklearn.metrics import classification_report # For evaluation metrics
 import numpy as np # For type hinting
 
-def train_and_predict(X_train, y_train, X_test):
+def train_and_predict(X_train, y_train, X_test,perform_tuning = False):
     """
-    Trains Logistic Regression model with hyperparameter tuning and predicts on test data.
+        Trains Logistic Regression model (with optional hyperparameter tuning) and predicts on test data.
 
     Args:
         X_train: training features (e.g., NumPy array or sparse matrix).
         y_train: training labels (list or NumPy array).
         X_test: test features (e.g., NumPy array or sparse matrix).
+        perform_tuning (bool): If True, performs GridSearchCV. If False, trains
+                               the model with default parameters. Defaults to True.
 
     Returns:
         y_pred: predicted labels for test set.
-        best_model: The best trained LogisticRegression model found by GridSearchCV.
+        best_model: The best trained LogisticRegression model (either from GridSearchCV or simple fit).
     """
-    print("   - Starting Logistic Regression training with GridSearchCV for hyperparameter tuning...")
+    lr_model = LogisticRegression(random_state=42) # Base model for training
 
-    # Define the parameter grid to search
-    param_grid = {
-        'solver': ['liblinear', 'lbfgs'], # Different solvers
-        'C': [0.1, 1.0, 10.0],            # Inverse of regularization strength
-        'class_weight': [None, 'balanced'], # Handle class imbalance
-        'max_iter': [500, 1000]           # Number of iterations
-    }
+    if perform_tuning:
+        print("   - Starting Logistic Regression training with GridSearchCV for hyperparameter tuning...")
 
-    # Initialize the Logistic Regression model
-    lr_model = LogisticRegression(random_state=42)
+        # Define the parameter grid to search (default grid, as no custom grid is passed here)
+        param_grid = {
+            'solver': ['liblinear', 'lbfgs'],
+            'C': [0.1, 1.0, 10.0],
+            'class_weight': [None, 'balanced'],
+            'max_iter': [500, 1000]
+        }
+        print("   - Using default parameter grid for tuning:", param_grid)
 
-    # Initialize GridSearchCV
-    # cv=5 means 5-fold cross-validation
-    # scoring='f1_weighted' is a good choice for imbalanced datasets, otherwise 'accuracy'
-    # n_jobs=-1 uses all available CPU cores
-    grid_search = GridSearchCV(
-        estimator=lr_model,
-        param_grid=param_grid,
-        cv=5, # 5-fold cross-validation
-        scoring='f1_weighted', # Or 'accuracy', 'roc_auc', etc., depending on your evaluation metric
-        n_jobs=-1, # Use all available cores
-        verbose=1 # Print progress messages
-    )
+        grid_search = GridSearchCV(
+            estimator=lr_model,
+            param_grid=param_grid,
+            cv=5,
+            scoring='f1_weighted',
+            n_jobs=-1,
+            verbose=1
+        )
 
-    # Fit GridSearchCV to the training data
-    # This will perform the hyperparameter search
-    grid_search.fit(X_train, y_train)
+        grid_search.fit(X_train, y_train)
+        best_model = grid_search.best_estimator_
+        print("\n   - Best Hyperparameters found:")
+        print(grid_search.best_params_)
+        print(f"   - Best Cross-Validation Score (F1-weighted): {grid_search.best_score_:.4f}")
+    else:
+        print("   - Training Logistic Regression with default parameters (no hyperparameter tuning)...")
+        best_model = lr_model # Use the base model directly
+        best_model.fit(X_train, y_train) # Fit it on X_train, y_train
+        print("   - Model trained with default parameters.")
 
-    # Get the best model found by GridSearchCV
-    best_model = grid_search.best_estimator_
-
-    print("\n   - Best Hyperparameters found:")
-    print(grid_search.best_params_)
-    print(f"   - Best Cross-Validation Score (F1-weighted): {grid_search.best_score_:.4f}")
-
-    # Make predictions on the test set using the best model
     y_pred = best_model.predict(X_test)
     print("Best model parameters:", best_model.get_params())
-    
-    return y_pred,best_model
+
+    return y_pred, best_model

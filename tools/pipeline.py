@@ -13,7 +13,8 @@ def run_pipeline(
     model_name: str,
     df: pl.DataFrame,
     text_column_name: str,
-    sentiment_column_name: str
+    sentiment_column_name: str,
+    perform_tuning: bool = False
 ):
     """
     Runs the full pipeline:
@@ -94,7 +95,7 @@ def run_pipeline(
 
     # Train + predict
     print("3. Training and predicting...")
-    y_pred, trained_model_object = train_and_predict_function(X_train, y_train, X_test)
+    y_pred, trained_model_object = train_and_predict_function(X_train, y_train, X_test, perform_tuning=perform_tuning)
 
     # Evaluate
     print("4. Evaluating model...")
