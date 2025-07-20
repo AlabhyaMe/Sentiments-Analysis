@@ -5,15 +5,15 @@ import sys
 import os
 project_root = os.getcwd()
 sys.path.insert(0, project_root)
+
 # here I have three python script I built to pre_process the data and running the pipeline
 # you can find the code in the tools/preprocess.py file
 # you can find  the code in the tools/pipeline.py file
 # the pre_process function is used to clean the text data, there are various options available, please check the tools/preprocess.py file for details
 # the run_pipeline function is used to run the sentimental analysis pipeline, it takes the training data and the vectorizer and machine learning methods as input, and returns the results
+
 from preprocess import pre_process
-#this function will run the sentimental analysis in the training data and return the results
 from pipeline import run_pipeline
-# this function will run the sentimental analysis in the new data and return the predictions
 from predict import make_predictions
 
 # ENTER YOUR PATHS HERE FOR THE TRAINING DATA SET
@@ -45,7 +45,7 @@ dt= run_pipeline(
 
 new_data = df_test.with_columns(
     pl.col(response_column).map_elements(lambda x: pre_process(x).alias("processed")  #add inside the map_elements
-)
+))
 
 # MAKE PREDICTIONS ON THE NEW DATA
 sentiments_prediction= make_predictions(
