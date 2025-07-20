@@ -113,7 +113,7 @@ Place your new prediction CSV file in the `new_data/` folder.
 
 ## 📚 Dataset Citation
 
-This project uses publicly available training data from:
+The demo uses publicly available training data from:
 
 > Madhav Kumar Choudhary. *Sentiment Prediction on Movie Reviews*. Kaggle.  
 > [https://www.kaggle.com/datasets/madhavkumarchoudhary/sentiment-prediction-on-movie-reviews](https://www.kaggle.com/datasets/madhavkumarchoudhary/sentiment-prediction-on-movie-reviews)  
