@@ -1,17 +1,13 @@
 Metadata-Version: 2.4
 Name: quick_sentiments
-Version: 0.1.0
-Summary: An easy-to-use, ready-made Sentiment Analysis pipeline.
+Version: 0.1.1
+Summary: Sentiment Analysis pipeline
 Home-page: https://github.com/AlabhyaMe/Sentiments-Analysis.git
 Author: Alabhya Dahal
 Author-email: alabhya.dahal@gmail.com
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
-Classifier: Topic :: Text Processing :: Linguistic
-Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
-Classifier: Intended Audience :: Developers
-Classifier: Intended Audience :: Science/Research
 Requires-Python: >=3.8
 Description-Content-Type: text/markdown
 Requires-Dist: polars==1.31.0
@@ -19,23 +15,27 @@ Requires-Dist: scikit-learn==1.7.0
 Requires-Dist: gensim==4.3.0
 Requires-Dist: nltk==3.8.1
 Requires-Dist: xgboost==3.0.2
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: black>=22.0; extra == "dev"
 Dynamic: author
 Dynamic: author-email
 Dynamic: classifier
 Dynamic: description
 Dynamic: description-content-type
 Dynamic: home-page
+Dynamic: provides-extra
 Dynamic: requires-dist
 Dynamic: requires-python
 Dynamic: summary
 
-# ðŸ’¬ Sentiment Analysis Pipeline
+# 💬 Sentiment Analysis Pipeline
 
 This repository hosts an easy-to-use, ready-made **Sentiment Analysis pipeline** designed to get you started quickly with classifying text data. Everything you need, from data preprocessing to model training and prediction, is set up and configured.
 
 ---
 
-## âœ¨ Features
+## ✨ Features
 
 - **End-to-End Pipeline**: Go from raw text to sentiment predictions with minimal setup.
 - **Automated Preprocessing**: Includes robust text cleaning:
@@ -61,7 +61,7 @@ This repository hosts an easy-to-use, ready-made **Sentiment Analysis pipeline**
 
 ---
 
-## ðŸš€ Getting Started
+## 🚀 Getting Started
 
 Follow these steps to get your sentiment analysis pipeline up and running:
 
@@ -82,23 +82,23 @@ pip install -r requirements.txt
 ```
 ```
 This project is setup in the follwing pipeline
-â”œâ”€â”€ Training Data/
-â”‚   â””â”€â”€ train.csv                # Your training file
-â”œâ”€â”€ New Data/
-â”‚   â””â”€â”€ new_texts.csv            # Your new prediction file
-â”œâ”€â”€ MLAlgo/
-â”‚   â”œâ”€â”€ logistic_regression_model.py
-â”‚   â”œâ”€â”€ random_forest_model.py
-â”‚   â””â”€â”€ xgboost_model.py
-â”œâ”€â”€ Vect/
-â”‚   â”œâ”€â”€ bag_of_words_vectorizer.py
-â”‚   â”œâ”€â”€ tfidf_vectorizer.py
-â”‚   â””â”€â”€ word_embedding_vectorizer.py
-â”œâ”€â”€ preprocessing.py             # Text cleaning functions
-â”œâ”€â”€ sentiment_analysis_main.ipynb  # Full training + prediction notebook
-â”œâ”€â”€ sentiment_prediction.ipynb     # Quick prediction-only notebook
-â”œâ”€â”€ requirements.txt
-â””â”€â”€ README.md
+├── Training Data/
+│   └── train.csv                # Your training file
+├── New Data/
+│   └── new_texts.csv            # Your new prediction file
+├── MLAlgo/
+│   ├── logistic_regression_model.py
+│   ├── random_forest_model.py
+│   └── xgboost_model.py
+├── Vect/
+│   ├── bag_of_words_vectorizer.py
+│   ├── tfidf_vectorizer.py
+│   └── word_embedding_vectorizer.py
+├── preprocessing.py             # Text cleaning functions
+├── sentiment_analysis_main.ipynb  # Full training + prediction notebook
+├── sentiment_prediction.ipynb     # Quick prediction-only notebook
+├── requirements.txt
+└── README.md
 
 
 ```
@@ -106,22 +106,22 @@ This project is setup in the follwing pipeline
 
 ## 3. Prepare Your Data
 
-### ðŸ“Œ Training Data
+### 📌 Training Data
 
 Place your training CSV file in the `Training Data/` folder.
 
 - It must contain:
-  - A column named `Response` â€“ for the raw input text.
-  - A column named `Sentiment` â€“ for sentiment labels (e.g., `"Positive"`, `"Negative"`, `"Neutral"`).
+  - A column named `Response` – for the raw input text.
+  - A column named `Sentiment` – for sentiment labels (e.g., `"Positive"`, `"Negative"`, `"Neutral"`).
 
-### ðŸ“Œ New Data for Prediction
+### 📌 New Data for Prediction
 
 Place your new prediction CSV file in the `New Data/` folder.
 
 - It must contain:
   - A column named `RawTextColumn` (or another name you configure in the notebook).
 
-## ðŸ“š Dataset Citation
+## 📚 Dataset Citation
 
 This project uses publicly available training data from:
 
