@@ -2,7 +2,7 @@
 
 This repository hosts an easy-to-use, ready-made **Sentiment Analysis pipeline** designed to get you started quickly with classifying text data. Everything you need, from data preprocessing to model training and prediction, is set up and configured.
 
-Find the notebook DEMO sentiment prediction.ipynb that would walk through the methods. Alternatively, if you only want to run through  the vectorization and ML predictions, run the  sentiment_prediction notebook or Python file. 
+Inside the quick_sentiments folder, find the notebook DEMO sentiment prediction.ipynb, which walks through the methods. Alternatively, if you only want to run through  the vectorization and ML predictions, run the  sentiment_prediction notebook or Python file. 
 
 Just clone the repository to get started
 
