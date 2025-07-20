@@ -20,7 +20,7 @@ except FileNotFoundError:
 
 setup(
     name='quick_sentiments',
-    version='0.1.0',
+    version='0.1.1',
     author='Alabhya Dahal',
     author_email='alabhya.dahal@gmail.com',
     description='Sentiment Analysis pipeline',
@@ -33,7 +33,7 @@ setup(
     },
     classifiers=[
         'Programming Language :: Python :: 3',
-        'License :: UNCLEAR',
+        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
     ],
     python_requires='>=3.8',

@@ -4,6 +4,8 @@ quick_sentiments/__init__.py
 quick_sentiments/pipeline.py
 quick_sentiments/predict.py
 quick_sentiments/preprocess.py
+quick_sentiments/sentiment_prediction.py
+quick_sentiments/virtual_environment_setup.py
 quick_sentiments.egg-info/PKG-INFO
 quick_sentiments.egg-info/SOURCES.txt
 quick_sentiments.egg-info/dependency_links.txt
@@ -13,7 +15,6 @@ quick_sentiments/ml_algo/XGB.py
 quick_sentiments/ml_algo/__init__.py
 quick_sentiments/ml_algo/logit.py
 quick_sentiments/ml_algo/rf.py
-quick_sentiments/tools/__init__.py
 quick_sentiments/vect/BOW.py
 quick_sentiments/vect/__init__.py
 quick_sentiments/vect/tf.py
