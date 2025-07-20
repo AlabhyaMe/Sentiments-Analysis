@@ -2,6 +2,14 @@
 
 This repository hosts an easy-to-use, ready-made **Sentiment Analysis pipeline** designed to get you started quickly with classifying text data. Everything you need, from data preprocessing to model training and prediction, is set up and configured.
 
+Find the notebook DEMO sentiment prediction.ipynb that would walk through the methods. Alternatively, if you only want to run through  the vectorization and ML predictions, run the  sentiment_prediction notebook or Python file. 
+
+Just clone the repository to get started
+
+```bash
+git clone https://github.com/AlabhyaMe/quick_sentiments-.git
+```
+
 ---
 
 ## ✨ Features
@@ -43,32 +51,45 @@ Follow these steps to get your sentiment analysis pipeline up and running:
 ### 2. Clone the Repository
 
 ```bash
-git clone https://github.com/AlabhyaMe/Sentimental-Analysis-.git
-cd Sentimental-Analysis-
+git clone https://github.com/AlabhyaMe/quick_sentiments-.git
+cd quick_sentiments
 conda create -n sentiment_env python=3.9
 conda activate sentiment_env
 pip install -r requirements.txt
 ```
 ```
-This project is setup in the follwing pipeline
-├── Training Data/
-│   └── train.csv                # Your training file
-├── New Data/
-│   └── new_texts.csv            # Your new prediction file
-├── MLAlgo/
-│   ├── logistic_regression_model.py
-│   ├── random_forest_model.py
-│   └── xgboost_model.py
-├── Vect/
-│   ├── bag_of_words_vectorizer.py
-│   ├── tfidf_vectorizer.py
-│   └── word_embedding_vectorizer.py
-├── preprocessing.py             # Text cleaning functions
-├── sentiment_analysis_main.ipynb  # Full training + prediction notebook
-├── sentiment_prediction.ipynb     # Quick prediction-only notebook
-├── requirements.txt
-└── README.md
-
+quick_sentiments/                
+├── quick_sentiments/            
+│   ├── demo/                   
+│   │   └── new_data  #new file for predictions to be stored here | predicted files will also be generated here
+                |-test.csv  
+        └── training_data
+                └── train.csv # demo train data is here
+│   ├── ml_algo/                 
+│   │   ├── __init__.py          
+│   │   ├── logt.py
+│   │   ├── rf.py
+│   │   └── XGB.py
+│   ├── vect/                    
+│   │   ├── __init__.py          
+│   │   ├── BOW.py
+│   │   ├── tf.py
+        ├── tfidf.py
+│   │   └── wv.py
+    ├── DEMO sentiment_prediction.ipynb   # demo of how to use the notebook
+│   ├── pipeline.py             
+│   ├── predict.py               
+│   ├── preprocess.py            
+│   ├── sentiment_prediction.ipynb  # can be used by the user to make prediction
+│   ├── sentiment_prediction.py  # A standalone Python script for prediction 
+│   └── virtual environment setup.py 
+│                                
+├── README.md                    # Project description and instructions
+├── requirements.txt             # All Python dependencies
+├── setup.py                     # For optional future packaging (top-level)
+├── tests/                       # Your test files
+├── dist/                        # Built package distributions (automatically generated)
+└── pyproject.toml.txt           # NEW: This is likely pyproject.toml with a wrong .txt extension. It should just be `pyproject.toml`.
 
 ```
 
@@ -77,15 +98,15 @@ This project is setup in the follwing pipeline
 
 ### 📌 Training Data
 
-Place your training CSV file in the `Training Data/` folder.
+Place your training CSV file in the `demo/training_data` folder.
 
 - It must contain:
-  - A column named `Response` – for the raw input text.
-  - A column named `Sentiment` – for sentiment labels (e.g., `"Positive"`, `"Negative"`, `"Neutral"`).
+  - A column for  the raw input text. 
+  - A column for sentiment labels (e.g., `"Positive"`, `"Negative"`, `"Neutral"`)
 
 ### 📌 New Data for Prediction
 
-Place your new prediction CSV file in the `New Data/` folder.
+Place your new prediction CSV file in the `new_data/` folder.
 
 - It must contain:
   - A column named `RawTextColumn` (or another name you configure in the notebook).
