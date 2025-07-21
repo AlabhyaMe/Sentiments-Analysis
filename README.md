@@ -6,6 +6,16 @@ The package is now available to use.
 ```bash
 pip install -i https://test.pypi.org/simple/ quick-sentiments
 ```
+Due to Test PyPl not having the latest dependencies, it is recommended that you clone the Git repository and install the package locally. 
+
+```bash
+git clone https://github.com/AlabhyaMe/quick_sentiments.git
+```
+Then run the command in the command prompt or notebook where git is cloned
+
+```
+pip install .\dist\quick_sentiments-0.1.6-py3-none-any.whl
+```
 
 This Python package is designed to streamline natural language processing (NLP) for sentiment analysis. It achieves this by combining various vectorization techniques with machine learning models. The package automates the often complex and time-consuming vectorization process, allowing users to skip the manual coding typically required for this step. Additionally, users can easily select their preferred machine learning models to conduct sentiment analysis.
 
