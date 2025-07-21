@@ -83,17 +83,19 @@ quick_sentiments/
 ```
 
 
-## 3. Prepare Your Data
+## 3. USE THE DEMO
 
-### 📌 Training Data
+The DEMO has workbooks that are ready to use. Just ensure that your files and column names are correctly labelled. Follow the instructions in the workbook. Alternatively, you can just run the Python script if files and labels are properly set. 
+
+###  Training Data
 
 Place your training CSV file in the `demo/training_data` folder.
 
 - It must contain:
   - A column for  the raw input text. 
-  - A column for sentiment labels (e.g., `"Positive"`, `"Negative"`, `"Neutral"`)
+  - A column for sentiments
 
-### 📌 New Data for Prediction
+### New Data for Prediction
 
 Place your new prediction CSV file in the `new_data/` folder.
 
