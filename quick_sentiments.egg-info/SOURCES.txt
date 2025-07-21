@@ -1,6 +1,5 @@
 README.md
 pyproject.toml
-demo/demo_sub_function_tf.py
 demo/sentiment_prediction.py
 quick_sentiments/__init__.py
 quick_sentiments/pipeline.py
