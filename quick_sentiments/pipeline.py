@@ -7,11 +7,13 @@ from sklearn.preprocessing import LabelEncoder
 import polars as pl
 import importlib
 import numpy as np
+import pandas as pd
+from typing import Union
 
 def run_pipeline(
     vectorizer_name: str,
     model_name: str,
-    df: pl.DataFrame,
+    df: Union[pl.DataFrame, pd.DataFrame],
     text_column_name: str,
     sentiment_column_name: str,
     perform_tuning: bool = False
@@ -50,10 +52,19 @@ def run_pipeline(
         print(f"Error loading ML model module/function: {e}")
         return None
 
-    # Prepare data
+    """
+    Modified to handle both Polars and pandas DataFrames.
+    """
+    # Convert to Polars if input is pandas
+    if isinstance(df, pd.DataFrame):
+        df = pl.from_pandas(df)
+    elif not isinstance(df, pl.DataFrame):
+        raise TypeError(f"Expected Polars or pandas DataFrame, got {type(df)}")
+    
+    # Polars DataFrame handling
     X_text = df[text_column_name].to_list()
     y_raw = df[sentiment_column_name].to_list()
-
+    
     # --- NEW: Check for and drop None values in X_text and y_raw ---
     initial_data_len = len(X_text)
     
