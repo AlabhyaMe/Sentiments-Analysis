@@ -9,23 +9,8 @@ pip install -i https://test.pypi.org/simple/ quick-sentiments
 
 This Python package is designed to streamline natural language processing (NLP) for sentiment analysis. It achieves this by combining various vectorization techniques with machine learning models. The package automates the often complex and time-consuming vectorization process, allowing users to skip the manual coding typically required for this step. Additionally, users can easily select their preferred machine learning models to conduct sentiment analysis.
 
-## !!! Archive :: Sentiments Analysis
 
-This repository hosts an easy-to-use, ready-made **Sentiment Analysis pipeline** designed to get you started quickly with classifying text data. Everything you need, from data preprocessing to model training and prediction, is set up and configured.
-
-Inside the quick_sentiments folder, find the notebook DEMO sentiment prediction.ipynb, which walks through the methods. Alternatively, if you only want to run through  the vectorization and ML predictions, run the  sentiment_prediction notebook or Python file. 
-
-Just clone the repository to get started
-
-```bash
-git clone https://github.com/AlabhyaMe/quick_sentiments-.git
-```
-
----
-
-You no longer need to clone the git. The package is readily available for download.
-
-## ✨ Features
+##  Features
 
 - **End-to-End Pipeline**: Go from raw text to sentiment predictions with minimal setup.
 - **Automated Preprocessing**: Includes robust text cleaning:
@@ -50,26 +35,7 @@ You no longer need to clone the git. The package is readily available for downlo
 - **Prediction on New Data**: Easily apply your trained model to new, unseen data.
 
 ---
-
-## 🚀 Getting Started
-
-Follow these steps to get your sentiment analysis pipeline up and running:
-
-### 1. Prerequisites
-
-- **Git**: For cloning the repository.
-- **Python 3.8+** (Recommended: Anaconda for environment management)
-- **Anaconda/Miniconda**: Strongly recommended
-
-### 2. Clone the Repository
-
-```bash
-git clone https://github.com/AlabhyaMe/quick_sentiments-.git
-cd quick_sentiments
-conda create -n sentiment_env python=3.9
-conda activate sentiment_env
-pip install -r requirements.txt
-```
+##  Package Structure 
 ```
 quick_sentiments/                
 ├── quick_sentiments/            
