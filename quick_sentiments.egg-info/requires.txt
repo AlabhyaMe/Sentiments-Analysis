@@ -5,6 +5,7 @@ polars<0.20.0,>=0.19.5
 gensim==4.3.0
 nltk==3.8.1
 xgboost==3.0.2
+scipy>=1.10.0
 
 [dev]
 pytest>=6.0
