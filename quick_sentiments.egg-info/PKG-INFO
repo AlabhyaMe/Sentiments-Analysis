@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: quick-sentiments
-Version: 0.1.6
+Version: 0.1.7
 Summary: Sentiment Analysis pipeline
 Author-email: Alabhya Dahal <alabhya.dahal@gmail.com>
 License: MIT License
@@ -22,6 +22,7 @@ Requires-Dist: polars<0.20.0,>=0.19.5
 Requires-Dist: gensim==4.3.0
 Requires-Dist: nltk==3.8.1
 Requires-Dist: xgboost==3.0.2
+Requires-Dist: scipy>=1.10.0
 Provides-Extra: dev
 Requires-Dist: pytest>=6.0; extra == "dev"
 Requires-Dist: black>=22.0; extra == "dev"
