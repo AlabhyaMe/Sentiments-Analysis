@@ -11,7 +11,7 @@ Due to Test PyPl not having the latest dependencies, it is recommended that you 
 ```bash
 git clone https://github.com/AlabhyaMe/quick_sentiments.git
 ```
-Then run the command in the command prompt or notebook where git is cloned
+Then run the command in the command prompt or notebook where git is cloned. Make sure you are in the main directory - quick_sentiments
 
 ```
 pip install .\dist\quick_sentiments-0.1.6-py3-none-any.whl
