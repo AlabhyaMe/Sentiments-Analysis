@@ -1,12 +1,12 @@
 #  Quick Sentiments
 
 ## Updates
-The package is now available to use. 
+The package is now live! 
 
 ```bash
-pip install -i https://test.pypi.org/simple/ quick-sentiments
+!pip install quick-sentiments
 ```
-Due to Test PyPl not having the latest dependencies, it is recommended that you clone the Git repository and install the package locally. 
+Alternatively, you can clone the git and install it locally.
 
 ```bash
 git clone https://github.com/AlabhyaMe/quick_sentiments.git
@@ -45,47 +45,12 @@ This Python package is designed to streamline natural language processing (NLP) 
 - **Prediction on New Data**: Easily apply your trained model to new, unseen data.
 
 ---
-##  Package Structure 
-```
-quick_sentiments/                
-├── quick_sentiments/            
-│   ├── demo/                   
-│   │   └── new_data  #new file for predictions to be stored here | predicted files will also be generated here
-                |-test.csv  
-        └── training_data
-                └── train.csv # demo train data is here
-│   ├── ml_algo/                 
-│   │   ├── __init__.py          
-│   │   ├── logt.py
-│   │   ├── rf.py
-│   │   └── XGB.py
-│   ├── vect/                    
-│   │   ├── __init__.py          
-│   │   ├── BOW.py
-│   │   ├── tf.py
-        ├── tfidf.py
-│   │   └── wv.py
-    ├── DEMO sentiment_prediction.ipynb   # demo of how to use the notebook
-│   ├── pipeline.py             
-│   ├── predict.py               
-│   ├── preprocess.py            
-│   ├── sentiment_prediction.ipynb  # can be used by the user to make prediction
-│   ├── sentiment_prediction.py  # A standalone Python script for prediction 
-│   └── virtual environment setup.py 
-│                                
-├── README.md                    # Project description and instructions
-├── requirements.txt             # All Python dependencies
-├── setup.py                     # For optional future packaging (top-level)
-├── tests/                       # Your test files
-├── dist/                        # Built package distributions (automatically generated)
-└── pyproject.toml.txt           # NEW: This is likely pyproject.toml with a wrong .txt extension. It should just be `pyproject.toml`.
 
-```
+## 3. INSTRUCTIONS AND DEMO
 
+To help users get started with this package, I have documented comprehensive instructions and a demo workbook. Please begin by reviewing quick_sentiments.pdf for an introduction to the library's capabilities.
 
-## 3. USE THE DEMO
-
-The DEMO has workbooks that are ready to use. Just ensure that your files and column names are correctly labelled. Follow the instructions in the workbook. Alternatively, you can just run the Python script if files and labels are properly set. 
+Afterward, proceed to the Demo workbook, which contains ready-to-use examples. Please ensure that your file names and column labels are accurately set before proceeding with the instructions within the workbook. As an alternative, you may directly execute the Python script, provided your files and labels are correctly configured.
 
 ###  Training Data
 
