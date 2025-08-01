@@ -1,6 +1,5 @@
 README.md
 pyproject.toml
-demo/sentiment_prediction.py
 quick_sentiments/__init__.py
 quick_sentiments/pipeline.py
 quick_sentiments/predict.py
@@ -14,9 +13,14 @@ quick_sentiments.egg-info/top_level.txt
 quick_sentiments/ml_algo/XGB.py
 quick_sentiments/ml_algo/__init__.py
 quick_sentiments/ml_algo/logit.py
+quick_sentiments/ml_algo/nn.py
 quick_sentiments/ml_algo/rf.py
 quick_sentiments/vect/BOW.py
 quick_sentiments/vect/__init__.py
+quick_sentiments/vect/glove_100.py
+quick_sentiments/vect/glove_200.py
+quick_sentiments/vect/glove_25.py
+quick_sentiments/vect/glove_50.py
 quick_sentiments/vect/tf.py
 quick_sentiments/vect/tfidf.py
 quick_sentiments/vect/wv.py
