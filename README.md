@@ -33,10 +33,12 @@ This Python package is designed to streamline natural language processing (NLP) 
   - Term Frequency (TF)
   - TF-IDF (Term Frequency-Inverse Document Frequency)
   - Word Embeddings (Word2Vec - pre-trained Google News 300-dim model)
+  - Glove Embedding (25,50,100 and 200)
 - **Multiple Machine Learning Algorithms**:
   - Logistic Regression
   - Random Forest
   - XGBoost
+  - Neural Network
 - **Hyperparameter Tuning Support**:
   - All models are compatible with GridSearchCV.
   - By default, models run with standard parameters for quick testing.
