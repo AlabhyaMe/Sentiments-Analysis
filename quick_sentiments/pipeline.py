@@ -39,7 +39,8 @@ def run_pipeline(
     # Import vectorizer from vect folder
     try:
         vec_module = importlib.import_module(f"quick_sentiments.vect.{vectorizer_name}")
-        vectorize_function = getattr(vec_module, "vectorize")
+        vectorize_train = getattr(vec_module, "vectorize_train")
+        vectorize_test = getattr(vec_module, "vectorize_test")
     except (ImportError, AttributeError) as e:
         print(f"Error loading vectorizer module/function: {e}")
         return None
@@ -94,19 +95,20 @@ def run_pipeline(
     y = label_encoder.fit_transform(y_raw)
     print(f"Labels encoded: Original -> {label_encoder.classes_}, Encoded -> {np.unique(y)}")
 
-    # Vectorize the entire dataset (X)
-    print("1. Vectorizing entire dataset (X)...")
-    X_vectorized, fitted_vectorizer_object = vectorize_function(X_text)
-
-    # Split data AFTER vectorization
-    print("2. Splitting data into train/test...")
+    # Split data Before vectorization
+    print("1. Splitting data into train/test...")
     X_train, X_test, y_train, y_test = train_test_split(
-        X_vectorized, y, test_size=0.2, random_state=42, stratify=y
+        X_text, y, test_size=0.2, random_state=42, stratify=y
     )
+
+    # Vectorize the dataset (X)
+    print("2. Vectorizing  dataset (X)...")
+    X_train_vectorized, fitted_vectorizer_object = vectorize_train(X_train)
+    X_test_vectorized = vectorize_test(X_test, fitted_vectorizer_object)
 
     # Train + predict
     print("3. Training and predicting...")
-    y_pred, trained_model_object = train_and_predict_function(X_train, y_train, X_test, perform_tuning=perform_tuning)
+    y_pred, trained_model_object = train_and_predict_function(X_train_vectorized, y_train, X_test_vectorized, perform_tuning=perform_tuning)
 
     # Evaluate
     print("4. Evaluating model...")

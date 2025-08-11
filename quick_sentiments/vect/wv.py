@@ -12,7 +12,7 @@ def sentence_vector(words, mod):
         return np.zeros(mod.vector_size)
     return np.mean(word_vectors, axis=0)
 
-def vectorize(texts):
+def vectorize_train(texts):
     """
     Accepts:
         texts: list of strings (full corpus)
@@ -40,3 +40,10 @@ def vectorize(texts):
     # For Word2Vec, the loaded model instance itself serves as the "fitted vectorizer object"
     # because it contains the vocabulary and embeddings needed to transform new data consistently.
     return X_features, _loaded_word2vec_model_instance # since we are using array, order is necessary, thus we need to return the model instance as well
+
+
+def vectorize_test(texts, loaded_model):
+    print("Transforming test data using loaded Word2Vec model...")
+    tokenized = [sentence.split() for sentence in texts]
+    X_features = np.array([sentence_vector(tokens, loaded_model) for tokens in tokenized])
+    return X_features

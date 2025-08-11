@@ -4,6 +4,7 @@ quick_sentiments/__init__.py
 quick_sentiments/pipeline.py
 quick_sentiments/predict.py
 quick_sentiments/preprocess.py
+quick_sentiments/spacy_preprocess.py
 quick_sentiments/virtual_environment_setup.py
 quick_sentiments.egg-info/PKG-INFO
 quick_sentiments.egg-info/SOURCES.txt
